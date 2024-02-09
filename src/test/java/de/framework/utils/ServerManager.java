@@ -8,6 +8,10 @@ import io.appium.java_client.service.local.flags.GeneralServerFlag;
 public class ServerManager {
     // create a server variable of type ThreadLocal<AppiumLocalService>
     public static ThreadLocal<AppiumDriverLocalService> server = new ThreadLocal<>();
+     // Create a getter method for server
+     public AppiumDriverLocalService getServer() {
+        return server.get();
+    }
 
     // Create a method to start the appium server
     public void startServer() {

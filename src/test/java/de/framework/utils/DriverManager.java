@@ -22,7 +22,7 @@ public class DriverManager {
         AppiumDriver driver =null;
         if (driver == null){
             try{
-            driver =new AndroidDriver(new ServerManager().getUrl(),new CapabilitiesManager().getCapabilities());
+            driver =new AndroidDriver(new ServerManager().getServer().getUrl(),new CapabilitiesManager().getCapabilities());
             //set the ThreadLocal driver variable to  equal to the newly created driver
             DriverManager.driver.set(driver);}
             catch(IOException e){
