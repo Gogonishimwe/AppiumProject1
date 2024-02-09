@@ -18,7 +18,7 @@ public class DriverManager {
         driver.set(driverValue);
     }
     //create a metthod to  initialize the drive
-    public void initializeDriver(){
+    public void initializeDriver() throws IOException{
         AppiumDriver driver =null;
         if (driver == null){
             try{
