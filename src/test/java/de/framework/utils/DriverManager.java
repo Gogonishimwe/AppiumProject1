@@ -10,7 +10,7 @@ public class DriverManager {
     private static ThreadLocal<AppiumDriver> driver =new ThreadLocal<>();
 
     // Create a getter method for the driver
-    public AppiumDriver getDriver(){
+    public static  AppiumDriver getDriver(){
         return driver.get();
     }
     //Create a setter method for the driver
