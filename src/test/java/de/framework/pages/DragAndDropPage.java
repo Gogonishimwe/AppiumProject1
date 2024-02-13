@@ -7,8 +7,12 @@ public class DragAndDropPage extends Basepage{
 	By untextredCicleBy =AppiumBy.id("io.appium.android.apis:id/drag_dot_1");
 	By DroppedMessageBy=AppiumBy.id("io.appium.android.apis:id/drag_result_text");
 	
-	public void untextredCicle() {
+	public void untextredCicleBy() {
 		getElement(untextredCicleBy).click();
+	}
+
+	public void DroppedMessageBy() {
+		getElement(DroppedMessageBy).click();
 	}
 	
 

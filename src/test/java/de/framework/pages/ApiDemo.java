@@ -13,10 +13,13 @@ public class ApiDemo extends Basepage{
     	getElement(viewsLinkBy).click();
 		
     }
-    public ApiDemo dragAndDrop() {
+    
+    public DragAndDropPage dragAndDrop() {
      getElement(dragAndDropBy).click();
-	return dragAndDrop();	
+	return new DragAndDropPage();	
     }
+	
+	
   
     
 }
