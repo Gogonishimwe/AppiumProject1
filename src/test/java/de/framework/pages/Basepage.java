@@ -30,10 +30,7 @@ public class Basepage {
  public WebElement getElement(By locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
   }
-  public void WebElement(WebElement element){
-    element.click();
-
-  }
+  
   
   public void DragAndDrop(By locator,int startX,int startY,int endX,int endY){
     WebElement element = getElement(locator);
