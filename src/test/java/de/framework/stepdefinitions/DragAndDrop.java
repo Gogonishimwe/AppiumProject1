@@ -16,7 +16,7 @@ public class DragAndDrop extends Basepage{
 
 	@When("taps on Drag and Drop link")
 	public void taps_on_drag_and_drop_link() {
-	   dragAndDrop = apidemo.dragAndDrop();
+	 DragAndDrop = drag.dragAndDrop();
 	}
 
 	@When("long clicks on untexted red cicle")

@@ -27,7 +27,7 @@ public class CapabilitiesManager {
             capabilities.setCapability("appPackage", props.getProperty("androidAppPackage"));
             capabilities.setCapability("appActivity", props.getProperty("androidAppActivity"));
             String androidAppUrl = System.getProperty("user.dir") + File.separator + "src" + File.separator + "test"
-                    + File.separator + "resources" + File.separator + "de" + File.separator +"framework"+ File.separator + "app"+ "ApiDemos-debug.apk";
+                    + File.separator + "resources" + File.separator + "de" + File.separator +"framework"+ File.separator + "app"+ File.separator + "ApiDemos-debug.apk";
  
             capabilities.setCapability("app", androidAppUrl);
  
