@@ -10,6 +10,6 @@ import io.cucumber.junit.CucumberOptions;
     "de.framework.hooks", "de.framework.utils" }, plugin = { "pretty", "html:target/report/htmlReport.html",
         "json:target/report/jsonReport.json" })
 
-public class TestRunner {
+public class RunnerTest {
 
 }

@@ -30,7 +30,7 @@ public class GlobalParams {
         GlobalParams params= new GlobalParams();
         params.setplatformName(System.getProperty("platform","Android"));
         params.setdeviceName(System.getProperty("deviceName","Techno"));
-        params.setsystemPort("2000");
+        params.setsystemPort("0");
 
     }
 
