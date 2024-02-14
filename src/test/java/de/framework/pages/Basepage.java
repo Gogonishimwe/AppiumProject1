@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.remote.RemoteWebElement;
+
 
 import com.google.common.collect.ImmutableMap;
 
@@ -45,5 +45,8 @@ public class Basepage {
   public void checkSimilarityOfText(String text1, String text2) {
     Assert.assertEquals(text1, text2);
 }
-  
+  public void PopupMenu(By locator){
+    
+
+  }
 }
