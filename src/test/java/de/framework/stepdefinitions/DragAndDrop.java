@@ -19,14 +19,14 @@ public class DragAndDrop extends Basepage{
 	 dragAndDropPage = apiDemo.dragAndDrop();
 	}
 
-	@When("long clicks on untexted red cicle")
+	@When("drag untexted red cicle")
 	public void long_clicks_on_untexted_red_cicle() {
-	 dragAndDropPage.untextredCicleBy();  
+	 dragAndDropPage.dragAndDropUntextRedCircle();  
 	}
 
 	@Then("{string} message should be displayed")
 	public void message_should_be_displayed(String string) {
-	  dragAndDropPage.DroppedMessageBy();  
+	  dragAndDropPage.theElementDropped(string);  
 	}
 
 

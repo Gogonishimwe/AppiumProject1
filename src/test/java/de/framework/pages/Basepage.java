@@ -2,6 +2,7 @@ package de.framework.pages;
 
 import java.time.Duration;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -15,6 +16,7 @@ import com.google.common.collect.ImmutableMap;
 import de.framework.utils.DriverManager;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+
 
 public class Basepage {
   private  AppiumDriver driver;
@@ -32,14 +34,16 @@ public class Basepage {
   }
   
   
-  public void DragAndDrop(By locator,int startX,int startY,int endX,int endY){
-    WebElement element = getElement(locator);
-   ((JavascriptExecutor) driver).executeScript("mobile: DragAndDrop", ImmutableMap.of("elementId", ((RemoteWebElement) element).getId(),
-  "StartX",113,
-  "StartY",229,
-  "endX", 621,
-  "endY", 1105
+  public void dragAndDrop(int startX,int startY,int endX,int endY){
+   ((JavascriptExecutor) driver).executeScript("mobile:dragGesture", ImmutableMap.of( 
+  "startX",startX,
+  "startY",startY,
+  "endX", endX,
+  "endY", endY
 ));
   }
+  public void checkSimilarityOfText(String text1, String text2) {
+    Assert.assertEquals(text1, text2);
+}
   
 }

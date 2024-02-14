@@ -4,16 +4,21 @@ import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
 
 public class DragAndDropPage extends Basepage{
-	By untextredCicleBy =AppiumBy.id("io.appium.android.apis:id/drag_dot_1");
-	By DroppedMessageBy=AppiumBy.id("io.appium.android.apis:id/drag_result_text");
+	By untextredCircleBy =AppiumBy.id("io.appium.android.apis:id/drag_dot_1");
+	By droppedMessageBy=AppiumBy.id("io.appium.android.apis:id/drag_result_text");
 	
-	public void untextredCicleBy() {
-		getElement(untextredCicleBy).click();
+	public void dragAndDropUntextRedCircle() {
+		dragAndDrop(214,532,605,918);
+		
 	}
 
-	public void DroppedMessageBy() {
-		getElement(DroppedMessageBy).click();
-	}
-	
-
+	public void theElementDropped(String expectedDragResultMessage) {
+		String dragResultMessage = getElement(droppedMessageBy).getText();
+		System.out.println("dragresult message " + dragResultMessage);
+		System.out.println("expectedDragresult message " + expectedDragResultMessage);
+		checkSimilarityOfText(expectedDragResultMessage, dragResultMessage);
 }
+	}
+	
+
+
