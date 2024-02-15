@@ -26,7 +26,7 @@ public class Basepage {
   public Basepage(){
      this.driver = DriverManager.getDriver();
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        wait = new WebDriverWait(driver,  Duration.ofSeconds(20));// time to wait
+        wait = new WebDriverWait(driver,  Duration.ofSeconds(40));// time to wait
 
   }
  public WebElement getElement(By locator) {
@@ -45,8 +45,10 @@ public class Basepage {
   public void checkSimilarityOfText(String text1, String text2) {
     Assert.assertEquals(text1, text2);
 }
-  public void PopupMenu(By locator){
+  public void sendTextToField(By locator, String text) {
+      getElement(locator).sendKeys(text);
+  }
     
 
   }
-}
+
