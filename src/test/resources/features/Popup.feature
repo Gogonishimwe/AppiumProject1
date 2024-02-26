@@ -1,5 +1,5 @@
 Feature:Popup
-@popup
+
 Scenario: popup window
 When a user taps on Preference link
 And taps on Preference dependencies link
