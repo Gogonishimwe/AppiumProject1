@@ -6,6 +6,8 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+//import org.openqa.selenium.remote.RemoteWebDriver;
+//import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.google.common.collect.ImmutableMap;
 
 import de.framework.utils.DriverManager;
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
@@ -48,7 +51,27 @@ public class Basepage {
   public void sendTextToField(By locator, String text) {
       getElement(locator).sendKeys(text);
   }
+  public void scrollDown(int startX,int startY,int endX,int endY){
+	   ((JavascriptExecutor) driver).executeScript("mobile:scrollGesture", ImmutableMap.of( 
+	  "startX",startX,
+	  "startY",startY,
+	 "endX", endX,
+	  "endY", endY
+	));
+	  }
+  
     
-
+//  public void scrollDown(RemoteWebDriver driver, RemoteWebElement element,int endX,int endY) {
+//	((JavascriptExecutor) driver).executeScript("mobile: scrollGesture", ImmutableMap.of(
+//			    "elementId", ((RemoteWebElement) element).getId(),
+//			    "endX", 188,
+//			    "endY", 292
+//		 ));
+//  }
+  
+  public void scrollDownElement(String elementText) {
+	  driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(" +
+		        "new UiSelector().textContains(\"" + elementText + "\"))"));
   }
+}
 

@@ -41,6 +41,7 @@ public class PopUp {
 	@Then("the user should see added text on popup window")
 	public void the_user_should_see_added_text_on_popup_window() {
 	    dependencies.clickonWifiSetting();
+	    dependencies.addWifisetting(toString());
 	}
 
   

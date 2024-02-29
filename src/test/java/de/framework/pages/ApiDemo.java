@@ -9,6 +9,7 @@ public class ApiDemo extends Basepage{
     By dragAndDropBy = AppiumBy.accessibilityId("Drag and Drop");
     By preferenceBy=AppiumBy.accessibilityId("Preference");
     By preferencedePendenciesBy=AppiumBy.accessibilityId("3. Preference dependencies");
+    By animationBy=AppiumBy.id("android:id/list");
 
     
     
@@ -30,6 +31,14 @@ public class ApiDemo extends Basepage{
 		return this;
 		
 	}
+	public void scrllDwn() {
+		scrollDownElement("TextClock");
+	
+	}
+	public void scrllUp(){
+		scrollDownElement("Animation");
+	}
+	
   
     
 }
