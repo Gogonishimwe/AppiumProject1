@@ -26,7 +26,22 @@ public class PreferenceDependenciesPage extends Basepage{
 	public void oKBtn() {
 		getElement(okBtnBy).click();
 	}
+	public void addWifisetting(String expectedAddText) {
+	     String addWifitext = getElement(inputPopupWindowBy).getText();
+	     System.out.println("Added text: " + addWifitext);
+	     System.out.println("Expected text: " + expectedAddText);
+	    
+	   if (addWifitext.equals(expectedAddText)) {
+	        System.out.println("Texts match.");
+	    } else {
+	        System.out.println("Texts do not match.");
+	    }
+	}
+
+
+		
+	}
 	
-	//
 	
-}
+	
+
