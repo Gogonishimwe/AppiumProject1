@@ -1,12 +1,8 @@
 
-Feature: Scroll
-Backgroung:When the clicks on views link
- @popup
-  Scenario: Scroll down 
-    When the user scroll down 
-    Then the user should see TextClock link
-   
- Scenario: Scroll up 
-  When the user scroll 
-  Then The Animation link should be displayed
-
+Feature: Scroll 
+@popup
+  Scenario: Scroll 
+    When a user taps on views link
+    Then the user scroll down to TextClock link
+    Then the user scroll up to Animation link
+  
