@@ -5,11 +5,11 @@ import org.openqa.selenium.By;
 import io.appium.java_client.AppiumBy;
 
 public class ApiDemo extends Basepage{
-	By viewsLinkBy = AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]");
+	  By viewsLinkBy = AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]");
     By dragAndDropBy = AppiumBy.accessibilityId("Drag and Drop");
     By preferenceBy=AppiumBy.accessibilityId("Preference");
     By preferencedePendenciesBy=AppiumBy.accessibilityId("3. Preference dependencies");
-    By animationBy=AppiumBy.id("android:id/list");
+    By radioButtonBy=AppiumBy.accessibilityId("Radio Group");
 
     
     
@@ -37,6 +37,12 @@ public class ApiDemo extends Basepage{
 	}
 	public void scrllUp(){
 		scrollDownElement("Animation");
+	}
+	public void RadioButtons(){
+		getElement(radioButtonBy).click();
+	}
+	public void  scrllDwnRadio(){
+		scrollDownElement("Radio Group");
 	}
 	
   
