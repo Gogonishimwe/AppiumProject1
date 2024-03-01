@@ -5,15 +5,18 @@ import org.openqa.selenium.By;
 import io.appium.java_client.AppiumBy;
 
 public class RadioGroup extends Basepage{
-  By dinnerBy=AppiumBy.accessibilityId	("Dinner");
-  By clearBtnBy=AppiumBy.accessibilityId("Clear");
+  By CheckingRadionButton = AppiumBy.accessibilityId("Dinner");
+  By clearingTheSelectedItem = AppiumBy.accessibilityId("Clear");
 
 
-  public void dinnerRadio(){
-    getElement(dinnerBy).click();
-  }
-  public void clear(){
-    getElement(clearBtnBy).click();
-  }
   
+ 
+    public void navigateToViewRadioButton(){
+        getElement(CheckingRadionButton).click();
+        
+    }
+ 
+    public void clearingTheSelectedItem (){
+        getElement(clearingTheSelectedItem).click();
+    }
 }

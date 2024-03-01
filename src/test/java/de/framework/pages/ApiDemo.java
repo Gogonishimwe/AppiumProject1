@@ -9,7 +9,11 @@ public class ApiDemo extends Basepage{
     By dragAndDropBy = AppiumBy.accessibilityId("Drag and Drop");
     By preferenceBy=AppiumBy.accessibilityId("Preference");
     By preferencedePendenciesBy=AppiumBy.accessibilityId("3. Preference dependencies");
-    By radioButtonBy=AppiumBy.accessibilityId("Radio Group");
+    By ChecktheRadionGroup = AppiumBy.accessibilityId("Radio Group");
+		By CheckingRadionButton = AppiumBy.accessibilityId("Dinner");
+    By clearingTheSelectedItem = AppiumBy.accessibilityId("Clear");
+
+
 
     
     
@@ -38,12 +42,20 @@ public class ApiDemo extends Basepage{
 	public void scrllUp(){
 		scrollDownElement("Animation");
 	}
-	public void RadioButtons(){
-		getElement(radioButtonBy).click();
+	public void navigateToRadionLink(){
+    scrollDownElement("Radio Group");
+   
+    getElement(ChecktheRadionGroup).click();
+    }
+		public void navigateToViewRadioButton(){
+			getElement(CheckingRadionButton).click();
+			
 	}
-	public void  scrllDwnRadio(){
-		scrollDownElement("Radio Group");
+
+	public void clearingTheSelectedItem (){
+			getElement(clearingTheSelectedItem).click();
 	}
+	
 	
   
     
