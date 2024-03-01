@@ -19,4 +19,4 @@ public class RadioGroup extends Basepage{
     public void clearingTheSelectedItem (){
         getElement(clearingTheSelectedItem).click();
     }
-}
+  }

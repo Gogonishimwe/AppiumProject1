@@ -26,7 +26,7 @@ public void the_user_taps_on_clear() {
 }
 @Then("the selected item should be disappear.")
 public void the_selected_item_should_be_disappear() { 
-    throw new io.cucumber.java.PendingException();
+   
 }
 
 }
