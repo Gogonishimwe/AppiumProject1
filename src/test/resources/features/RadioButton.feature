@@ -1,5 +1,5 @@
 Feature: Radio Buttons
-@popup
+
     Scenario: Select with Radio Buttons
         When a user tapson views link
         And the user scrollDown to RadionGroup link

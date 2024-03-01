@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebElement;
 //import org.openqa.selenium.remote.RemoteWebDriver;
 //import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -73,5 +74,12 @@ public class Basepage {
 	  driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(" +
 		        "new UiSelector().textContains(\"" + elementText + "\"))"));
   }
+  public void swipe(By locator, String direction) {
+        WebElement element = getElement(locator);
+        ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
+                "elementId", ((RemoteWebElement) element).getId(),
+                "direction", direction.toLowerCase(),
+                "percent", 0.20));
+    }
 }
 
