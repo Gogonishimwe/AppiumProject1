@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -23,7 +24,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 
 public class Basepage {
-  private  AppiumDriver driver;
+  protected  AppiumDriver driver;
   private  WebDriverWait wait;
    
 
@@ -76,10 +77,19 @@ public class Basepage {
   }
   public void swipe(By locator, String direction) {
         WebElement element = getElement(locator);
+        String swipeDirection;
         ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
                 "elementId", ((RemoteWebElement) element).getId(),
-                "direction", direction.toLowerCase(),
+                "direction",direction,
                 "percent", 0.20));
-    }
+   }
+  //   public void swipeLeft(By locator, String direction) {
+  //     WebElement element = getElement(locator);
+  //     ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
+  //             "elementId", ((RemoteWebElement) element).getId(),
+  //             "direction", "left",
+  //             "percent", 0.20));
+  // }
 }
+
 

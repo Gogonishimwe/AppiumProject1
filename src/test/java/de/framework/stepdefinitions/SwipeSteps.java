@@ -21,10 +21,16 @@ public class SwipeSteps {
 	   apiDemo.navigatePhoto();
 	}
 
-	@When("swipe two images right and left")
-	public void swipe_two_images_right_and_left() {
+	@When("swipe two images left")
+	public void swipe_two_images_left() {
+	    apiDemo.swipeImageLeft();
+			apiDemo.imagesSwiped();
+	}
+	@When("swipe two images right")
+	public void swipe_two_images_right() {
 	    apiDemo.swipeImageRight();
 	}
+
 
 	@Then("two images should be in focus")
 	public void two_images_should_be_in_focus() {

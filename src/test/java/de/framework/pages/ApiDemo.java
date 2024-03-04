@@ -19,7 +19,7 @@ public class ApiDemo extends Basepage{
 		By photosBy=AppiumBy.accessibilityId("1. Photos");
 		By firstImageBy=AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.Gallery/android.widget.ImageView[1]");
     By secondImageBy=AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.Gallery/android.widget.ImageView[2]");
-
+    By animationBy=AppiumBy.accessibilityId("Animation");	
 
     
     
@@ -68,22 +68,33 @@ public class ApiDemo extends Basepage{
 		getElement(photosBy).click();
 	}
 	public void swipeImageRight(){
-		swipe(firstImageBy, "Right");
-		swipe(secondImageBy,"Right");
+		swipe(firstImageBy, "right");
+		//swipe(secondImageBy,"right");
 		  
 	}
+	
+	public void swipeImageLeft(){
+		swipe(firstImageBy, "left");
+		//swipe(secondImageBy,"left");
+	}
+
 	public void imagesSwiped() {
-        String firstImageFocusable = getElement(firstImageBy).getAttribute("focusable");
-        String secondImageFocusable = getElement(secondImageBy).getAttribute("focusable");
-        assertEquals(firstImageFocusable, "false");
-        assertEquals(secondImageFocusable, "true");
+        String firstImageSelected = getElement(firstImageBy).getAttribute("selected");
+        String secondImageSelected = getElement(secondImageBy).getAttribute("selected");
+        assertEquals(firstImageSelected, "false");
+        assertEquals(secondImageSelected, "true");
     }
+	public void swipeToBottom(){
+		swipe(animationBy,"bottom");
+
+	}
+	}
 
 	
-	}
+	
 
 	
 	
   
     
-}
+
