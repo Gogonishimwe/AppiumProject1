@@ -1,6 +1,9 @@
 package de.framework.pages;
 
+import static org.junit.Assert.assertEquals;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 
 import io.appium.java_client.AppiumBy;
 
@@ -12,8 +15,11 @@ public class ApiDemo extends Basepage{
     By ChecktheRadionGroup = AppiumBy.accessibilityId("Radio Group");
 		By CheckingRadionButton = AppiumBy.accessibilityId("Dinner");
     By clearingTheSelectedItem = AppiumBy.accessibilityId("Clear");
-
-
+		By galleryBY= AppiumBy.accessibilityId("Gallery");
+		By photosBy=AppiumBy.accessibilityId("1. Photos");
+		By firstImageBy=AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.Gallery/android.widget.ImageView[1]");
+    By secondImageBy=AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.Gallery/android.widget.ImageView[2]");
+    By animationBy=AppiumBy.accessibilityId("Animation");	
 
     
     
@@ -55,8 +61,40 @@ public class ApiDemo extends Basepage{
 	public void clearingTheSelectedItem (){
 			getElement(clearingTheSelectedItem).click();
 	}
+	public void navigateGallery(){
+		getElement(galleryBY).click();
+	}
+	public void navigatePhoto(){
+		getElement(photosBy).click();
+	}
+	public void swipeImageRight(){
+		swipe(firstImageBy, "right");
+		//swipe(secondImageBy,"right");
+		  
+	}
+	
+	public void swipeImageLeft(){
+		swipe(firstImageBy, "left");
+		//swipe(secondImageBy,"left");
+	}
+
+	public void imagesSwiped() {
+        String firstImageSelected = getElement(firstImageBy).getAttribute("selected");
+        String secondImageSelected = getElement(secondImageBy).getAttribute("selected");
+        assertEquals(firstImageSelected, "false");
+        assertEquals(secondImageSelected, "true");
+    }
+	public void swipeToBottom(){
+		swipe(animationBy,"bottom");
+
+	}
+	}
+
+	
+	
+
 	
 	
   
     
-}
+
