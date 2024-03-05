@@ -19,7 +19,12 @@ public class ApiDemo extends Basepage{
 		By photosBy=AppiumBy.accessibilityId("1. Photos");
 		By firstImageBy=AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.Gallery/android.widget.ImageView[1]");
     By secondImageBy=AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.Gallery/android.widget.ImageView[2]");
-    By animationBy=AppiumBy.accessibilityId("Animation");	
+    By animationBy=AppiumBy.accessibilityId("Animation");
+		By expandableBy=AppiumBy.accessibilityId("Expandable Lists");	
+		By customAdapterBy=AppiumBy.accessibilityId("1. Custom Adapter");	
+		By poepleNameBy=AppiumBy.xpath("hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ExpandableListView/android.widget.TextView[1]\r\n" + //
+						"");	
+
 
     
     
@@ -88,6 +93,16 @@ public class ApiDemo extends Basepage{
 		swipe(animationBy,"bottom");
 
 	}
+	public void expandableLists(){
+		getElement(expandableBy).click();
+	}
+	public void custom(){
+		getElement(customAdapterBy).click();
+	}
+	public void longClickGesture(){
+		longClick(poepleNameBy);
+	}
+
 	}
 
 	

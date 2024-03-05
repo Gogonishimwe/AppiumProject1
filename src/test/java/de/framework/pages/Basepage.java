@@ -83,13 +83,12 @@ public class Basepage {
                 "direction",direction,
                 "percent", 0.20));
    }
-  //   public void swipeLeft(By locator, String direction) {
-  //     WebElement element = getElement(locator);
-  //     ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
-  //             "elementId", ((RemoteWebElement) element).getId(),
-  //             "direction", "left",
-  //             "percent", 0.20));
-  // }
+    public void longClick(By locator) {
+      WebElement element = getElement(locator);
+      ((JavascriptExecutor) driver).executeScript("mobile: longClickGesture", ImmutableMap.of(
+              "elementId", ((RemoteWebElement) element).getId(), "duration", 1000));
+
+  }
 }
 
 
