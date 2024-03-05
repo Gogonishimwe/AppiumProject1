@@ -29,7 +29,7 @@ public class GlobalParams {
     public void initializeGlobalParams(){
         GlobalParams params= new GlobalParams();
         params.setplatformName(System.getProperty("platform","Android"));
-        params.setdeviceName(System.getProperty("deviceName","Techno"));
+        params.setdeviceName(System.getProperty("deviceName","Pixel7"));
         params.setsystemPort("0");
 
     }
