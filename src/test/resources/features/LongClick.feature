@@ -1,5 +1,5 @@
 Feature: Longclick gesture
-@popup
+
 Scenario: Longclick
 When a user clicks on views link
 And clicks on expandable List link
