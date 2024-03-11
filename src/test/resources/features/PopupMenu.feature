@@ -1,5 +1,5 @@
 Feature:Popup menu
-@popup
+
 Scenario: popup menu
 When a user taps views link
 And scroll down to popup Menu link
