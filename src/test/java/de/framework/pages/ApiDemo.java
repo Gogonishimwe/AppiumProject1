@@ -31,6 +31,10 @@ public class ApiDemo extends Basepage{
     By searchBy=AppiumBy.xpath("hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView\r\n" + //
         "");	
 		By popupMessageBy=AppiumBy.xpath("/hierarchy/android.widget.Toast[1]");	
+		By autoCompleteBy=AppiumBy.accessibilityId("Auto Complete");
+		By screenTopBy =AppiumBy.accessibilityId("1. Screen Top");
+		By countryInputField=AppiumBy.id("io.appium.android.apis:id/edit");
+		By selectedCountryby=AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout");
 
 
     
@@ -128,6 +132,23 @@ public void thepopupMessage(String expectedPopupMessage) {
 	System.out.println("expected message " + expectedPopupMessage);
 	checkSimilarityOfText(expectedPopupMessage, popupMessage);
 }
+public void navigateToAutoComplete(){
+	getElement(autoCompleteBy).click();
+}
+public void navigateToScreenTop(){
+	getElement(screenTopBy).click();
+}
+public void countryField(){
+	getElement(countryInputField).click();
+}
+public void countryInputField(String text){
+	getElement(countryInputField).sendKeys("rw");
+}
+public void selectedCountry(){
+getElement(countryInputField).getText();
+}
+
+
 	}
 
 	
