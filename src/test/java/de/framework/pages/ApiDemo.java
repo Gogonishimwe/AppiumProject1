@@ -2,6 +2,8 @@ package de.framework.pages;
 
 import static org.junit.Assert.assertEquals;
 
+import javax.swing.Popup;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 
@@ -23,7 +25,12 @@ public class ApiDemo extends Basepage{
 		By expandableBy=AppiumBy.accessibilityId("Expandable Lists");	
 		By customAdapterBy=AppiumBy.accessibilityId("1. Custom Adapter");	
 		By poepleNameBy=AppiumBy.xpath("hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ExpandableListView/android.widget.TextView[1]\r\n" + //
-						"");	
+						"");
+		By popupMenuBy=AppiumBy.accessibilityId	("Popup Menu");	
+		By makeaPopupBy=AppiumBy.accessibilityId("Make a Popup!");
+    By searchBy=AppiumBy.xpath("hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView\r\n" + //
+        "");	
+		By popupMessageBy=AppiumBy.xpath("/hierarchy/android.widget.Toast[1]");	
 
 
     
@@ -102,7 +109,25 @@ public class ApiDemo extends Basepage{
 	public void longClickGesture(){
 		longClick(poepleNameBy);
 	}
-
+public void scrollToPopupMenu(){
+	scrollDownElement("Popup Menu");
+}
+public void navigateToPopupMenu(){
+	getElement(popupMenuBy).click();
+}
+public void makePopup(){
+	getElement(makeaPopupBy).click();
+	
+}
+public void navigateToSearch(){
+	getElement(searchBy).click();
+}
+public void thepopupMessage(String expectedPopupMessage) {
+	String popupMessage = getElement(popupMessageBy).getText();
+	System.out.println("popup message " + popupMessage);
+	System.out.println("expected message " + expectedPopupMessage);
+	checkSimilarityOfText(expectedPopupMessage, popupMessage);
+}
 	}
 
 	
